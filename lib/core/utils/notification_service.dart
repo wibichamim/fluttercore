@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
-import 'package:fluttercore/core/config/config.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:fluttercore/core/config/config.dart';
 import 'package:fluttercore/core/data/model/notification/notification_data.dart';
 
 class NotificationService {
@@ -16,7 +16,7 @@ class NotificationService {
         importance: Importance.max,
         enableLights: true,
       ),
-      iOS: IOSNotificationDetails(),
+      iOS: DarwinNotificationDetails(),
     );
   }
 
@@ -37,8 +37,8 @@ class NotificationService {
   static Future<NotificationData?> setup() async {
     const androidInitializationSettings =
         AndroidInitializationSettings('ic_notification');
-    final IOSInitializationSettings initializationSettingsIOS =
-        IOSInitializationSettings(
+    final DarwinInitializationSettings initializationSettingsIOS =
+        DarwinInitializationSettings(
       requestSoundPermission: false,
       requestBadgePermission: false,
       requestAlertPermission: false,
@@ -57,9 +57,9 @@ class NotificationService {
 
     final notificationData =
         await _notifications.getNotificationAppLaunchDetails();
-    if (notificationData?.payload != null) {
-      final data =
-          NotificationData.fromJson(jsonDecode(notificationData!.payload!));
+    if (notificationData?.notificationResponse?.payload != null) {
+      final data = NotificationData.fromJson(
+          jsonDecode(notificationData!.notificationResponse!.payload!));
       return data;
     }
 

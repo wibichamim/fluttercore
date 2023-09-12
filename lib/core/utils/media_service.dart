@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:injectable/injectable.dart';
-import 'package:path_provider/path_provider.dart';
 import 'package:flutter_image_compress/flutter_image_compress.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:injectable/injectable.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
 
 import '../../di/injection.dart';
@@ -86,10 +86,16 @@ class MediaServiceImpl implements MediaService {
     final randomName = const Uuid().v4();
     final targetPath = '${dir.absolute.path}/$randomName-temp.jpg';
 
-    return await FlutterImageCompress.compressAndGetFile(
+    XFile? xfile = await FlutterImageCompress.compressAndGetFile(
       file.absolute.path,
       targetPath,
       quality: quality,
     );
+
+    if (xfile != null) {
+      return File(xfile.path);
+    }
+
+    return null;
   }
 }
