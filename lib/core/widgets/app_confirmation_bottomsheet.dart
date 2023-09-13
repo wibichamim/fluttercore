@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttercore/core/utils/theme_extension.dart';
 import 'package:fluttercore/core/utils/translation.dart';
 import 'package:fluttercore/core/widgets/app_theme.dart';
@@ -31,24 +30,24 @@ class AppConfirmationBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: height.h,
+      height: height,
       width: double.infinity,
-      padding: EdgeInsets.symmetric(
+      padding: const EdgeInsets.symmetric(
         vertical: AppTheme.marginVertical,
         horizontal: AppTheme.marginHorizontal,
       ),
       child: Column(
         children: [
           image,
-          SizedBox(
-            height: 8.h,
+          const SizedBox(
+            height: 8,
           ),
           Text(
             title,
             style: context.textTheme.titleLarge,
           ),
-          SizedBox(
-            height: 8.h,
+          const SizedBox(
+            height: 8,
           ),
           Text(
             content,
@@ -57,8 +56,8 @@ class AppConfirmationBottomSheet extends StatelessWidget {
             ),
             textAlign: TextAlign.center,
           ),
-          SizedBox(
-            height: 16.h,
+          const SizedBox(
+            height: 16,
           ),
           Row(
             children: [
@@ -75,8 +74,8 @@ class AppConfirmationBottomSheet extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(
-                width: 8.w,
+              const SizedBox(
+                width: 8,
               ),
               Flexible(
                 flex: 1,

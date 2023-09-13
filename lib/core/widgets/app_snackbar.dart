@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttercore/core/utils/theme_extension.dart';
 
 extension ShowSnackbar on BuildContext {
@@ -9,8 +8,8 @@ extension ShowSnackbar on BuildContext {
         backgroundColor: Colors.transparent,
         elevation: 0,
         content: Container(
-          margin: EdgeInsets.symmetric(
-            vertical: 4.h,
+          margin: const EdgeInsets.symmetric(
+            vertical: 4,
           ),
           child: ListTile(
             leading: const Icon(

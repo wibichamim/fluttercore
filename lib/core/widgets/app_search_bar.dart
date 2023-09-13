@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttercore/core/utils/theme_extension.dart';
 
 import 'app_colors.dart';
@@ -56,8 +55,8 @@ class _AppSearchBarState extends State<AppSearchBar> {
             hintStyle: context.textTheme.bodyMedium?.copyWith(
               color: AppColors.textGray,
             ),
-            contentPadding: EdgeInsets.symmetric(
-              horizontal: 8.w,
+            contentPadding: const EdgeInsets.symmetric(
+              horizontal: 8,
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),

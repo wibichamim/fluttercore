@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttercore/core/utils/theme_extension.dart';
 
 import 'app_colors.dart';
@@ -37,7 +36,7 @@ class AppButton extends StatelessWidget {
             ),
             backgroundColor: isEnabled == true ? color : Colors.grey,
             textStyle: textStyle ?? context.textTheme.labelLarge,
-            minimumSize: Size.fromHeight(48.h),
+            minimumSize: const Size.fromHeight(48),
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -45,8 +44,8 @@ class AppButton extends StatelessWidget {
               Visibility(
                 visible: isLoading,
                 child: Container(
-                  width: 12.w,
-                  height: 12.w,
+                  width: 12,
+                  height: 12,
                   margin: const EdgeInsets.only(right: 4),
                   child: CircularProgressIndicator.adaptive(
                     backgroundColor: Colors.white.withOpacity(0.5),

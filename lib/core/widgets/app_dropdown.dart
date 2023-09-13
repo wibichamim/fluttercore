@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttercore/core/utils/theme_extension.dart';
 
 import 'app_colors.dart';
@@ -66,18 +65,18 @@ class _AppDropdownState extends State<AppDropdown> {
               widget.onSelected(i);
             }),
             decoration: InputDecoration(
-              contentPadding: EdgeInsets.symmetric(
-                vertical: 4.h,
-                horizontal: 4.w,
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 4,
+                horizontal: 4,
               ),
               enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(12),
                 borderSide: const BorderSide(
                   color: AppColors.softGray,
                 ),
               ),
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(12.r),
+                borderRadius: BorderRadius.circular(12),
                 borderSide: const BorderSide(
                   color: AppColors.softGray,
                 ),
